@@ -36,7 +36,7 @@ if [ $status -eq 1 ] #caching error, are you authenticated?
 end
 
 # download
-set counter 0
+#set counter 0
 for game in (cat $gamesfile)
 	humblebundle $params -t 'FLAC' --download $game
 	set success $status
@@ -53,10 +53,10 @@ for game in (cat $gamesfile)
 			set result 1 #note that some games were not downloaded by exiting with 1
 		end
         end
-	if [ $counter -ge 60 ]
-		exit 0
-	end
-	set counter (math $counter + 1)
+	#if [ $counter -ge 60 ]
+	#	exit 0
+	#end
+	#set counter (math $counter + 1)
 end
 
 rm $tmpfile
